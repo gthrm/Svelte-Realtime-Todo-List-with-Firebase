@@ -5,6 +5,8 @@
 
   let user;
 
+  console.log("process.env", process.env);
+
   authState(auth).subscribe((u) => console.log("u", u) || (user = u));
 
   function login() {
@@ -16,7 +18,7 @@
   }
 </script>
 
-<Layout {user} login={login} logout={logout} />
+<Layout {user} {login} {logout} />
 
 <!-- <section>
   {#if user}
