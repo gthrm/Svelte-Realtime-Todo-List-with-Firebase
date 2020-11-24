@@ -55,6 +55,14 @@ export default {
       _app: JSON.stringify({
         env: {
           isProd: production,
+          SVELTE_APP_APIKEY: process.env.SVELTE_APP_APIKEY,
+          SVELTE_APP_AUTHDOMAIN: process.env.SVELTE_APP_APIKEY,
+          SVELTE_APP_DB: process.env.SVELTE_APP_APIKEY,
+          SVELTE_APP_PID: process.env.SVELTE_APP_APIKEY,
+          SVELTE_APP_SB: process.env.SVELTE_APP_APIKEY,
+          SVELTE_APP_SID: process.env.SVELTE_APP_APIKEY,
+          SVELTE_APP_APPID: process.env.SVELTE_APP_APIKEY,
+          SVELTE_APP_MID: process.env.SVELTE_APP_APIKEY,
           ...config().parsed, // attached the .env config
         },
       }),
