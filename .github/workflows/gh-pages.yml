@@ -20,7 +20,17 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build pages
-        run: npm run build
+        run:
+          npm run build
+        env:
+          SVELTE_APP_APIKEY: ${{ secrets.SVELTE_APP_APIKEY }}
+          SVELTE_APP_AUTHDOMAIN: ${{ secrets.SVELTE_APP_AUTHDOMAIN }}
+          SVELTE_APP_DB: ${{ secrets.SVELTE_APP_APIKEY }}
+          SVELTE_APP_PID: ${{ secrets.SVELTE_APP_APIKEY }}
+          SVELTE_APP_SB: ${{ secrets.SVELTE_APP_APIKEY }}
+          SVELTE_APP_SID: ${{ secrets.SVELTE_APP_APIKEY }}
+          SVELTE_APP_APPID: ${{ secrets.SVELTE_APP_APIKEY }}
+          SVELTE_APP_MID: ${{ secrets.SVELTE_APP_APIKEY }}
       - name: Deploy with gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
